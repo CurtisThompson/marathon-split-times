@@ -19,7 +19,6 @@ def home_endpoint():
 
 @app.route('/predict', methods=['POST'])
 def get_prediction():
-    #curl -X POST 127.0.0.1:5000/predict -H "Content-Type: application/json" -d "['14:10', '14:10']"
     if request.method == 'POST':
         data = eval(request.get_data())
         prediction = split_predictor.predict_finishing_time(data)
@@ -28,4 +27,4 @@ def get_prediction():
 
 if __name__ == '__main__':
     load_model()
-    app.run()
+    app.run(host='0.0.0.0', port=80)
