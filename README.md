@@ -16,6 +16,10 @@ curl -X POST localhost:80/predict -H "Content-Type: application/json" -d "['14:1
 ```
 This command assumes that the docker container is running on localhost port 80. The data passed to the service is the split times for the prediction. In this example, our runner ran the first 5km in 14 minutes and 10 seconds (14:10). They ran the next 5km (5km-10km) in 14:10 as well. They ran the next 5km (10km-15km) in 14:14.
 
+## Data
+
+This repository uses data from several data sources. London marathon results for 2019 are scraped using notebooks in this repository. Boston marathon results for 2015, 2016, and 2017 are obtained from [rojour's dataset on Kaggle](https://www.kaggle.com/rojour/boston-results).
+
 ## Marathon Notes
 
 A [marathon](https://en.wikipedia.org/wiki/Marathon) is a 42.195km road race. Famous marathon races include the London Marathon and Boston Marathon, which are run by elite athletes and regular people. A male elite athlete might be expected to run a marathon between 2 hours (written as 2:00:00) and 2 hours and 15 minutes (written as 2:15:00). More casual runners can have times ranging between 3 and 6 hours.
